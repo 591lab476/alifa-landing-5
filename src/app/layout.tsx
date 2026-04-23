@@ -5,11 +5,11 @@ import Footer from "@/components/layout/footer/Footer";
 import { Toaster } from "sonner";
 import NavContent from "@/components/layout/navbar/NavContent";
 import Script from "next/script";
-import TidioScript from "./TidioScript";
 import NextTopLoader from "nextjs-toploader";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
-import config from "@/types/Config";
+import SupportBoardScript from "./SupportBoardScript";
+import { supportBoardScriptSrc } from "@/lib/supportBoard";
 
 const alibaba = localFont({
   src: [
@@ -42,7 +42,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const apiUrl = config.apiUrl;
   return (
     <html className="scroll-smooth" lang="en">
       <body className={alibaba.className}>
@@ -67,9 +66,7 @@ export default function RootLayout({
             gtag('config', 'G-F1LPCYB7JH');
           `}
         </Script> */}
-        {/* {apiUrl && apiUrl.includes("https://api.alifaedtech.com") && ( */}
-        <TidioScript />
-        {/* )} */}
+        {supportBoardScriptSrc ? <SupportBoardScript /> : null}
         <Analytics />
       </body>
     </html>
