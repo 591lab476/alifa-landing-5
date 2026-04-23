@@ -8,8 +8,8 @@ import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
-import SupportBoardScript from "./SupportBoardScript";
 import { supportBoardScriptSrc } from "@/lib/supportBoard";
+import SupportBoardScript from "./SupportBoardScript";
 
 const alibaba = localFont({
   src: [
